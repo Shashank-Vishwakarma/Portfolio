@@ -14,10 +14,10 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             <div className="flex-1 space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
-                Hi, I'm <span className="text-primary">John Doe</span>
+                Hi, I'm <span className="text-primary">Shashank Vishwakarma</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
-                Full-Stack Developer specializing in React, Node.js, Next.js, TypeScript, MongoDB, and GoLang.
+                Full-Stack Developer specializing in Golang, Python, Javascript/Typescript, Node.js, React, Next.js, MongoDB, and more.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg">
@@ -36,16 +36,10 @@ export default function HomePage() {
                     <span className="sr-only">GitHub</span>
                   </Button>
                 </Link>
-                <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:cursor-pointer">
                   <Button variant="ghost" size="icon">
                     <Linkedin className="h-5 w-5" />
                     <span className="sr-only">LinkedIn</span>
-                  </Button>
-                </Link>
-                <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                  <Button variant="ghost" size="icon">
-                    <Twitter className="h-5 w-5" />
-                    <span className="sr-only">Twitter</span>
                   </Button>
                 </Link>
               </div>
@@ -148,54 +142,6 @@ export default function HomePage() {
           <div className="mt-10 text-center">
             <Button asChild variant="outline">
               <Link href="/skills">View All Skills</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Latest Blog Posts */}
-      <section className="py-16 bg-muted/50">
-        <div className="container px-4 md:px-6 mx-auto">
-          <h2 className="text-3xl font-bold tracking-tighter mb-8">Latest Blog Posts</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="border rounded-lg overflow-hidden bg-card shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="aspect-video w-full overflow-hidden">
-                  <Image
-                    src={`/placeholder.svg?height=200&width=400&text=Blog+${i}`}
-                    alt={`Blog ${i}`}
-                    width={400}
-                    height={200}
-                    className="object-cover w-full"
-                  />
-                </div>
-                <div className="p-4">
-                  <div className="flex gap-2 mb-2">
-                    <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">Technology</span>
-                    <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">Development</span>
-                  </div>
-                  <h3 className="text-xl font-semibold">How to Build a Modern Web App in 2024</h3>
-                  <p className="text-muted-foreground mt-2 line-clamp-2">
-                    Learn the latest techniques and technologies for building modern web applications.
-                  </p>
-                  <div className="mt-4 flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">April 10, 2024</span>
-                    <Link href={`/blog/post-${i}`}>
-                      <Button variant="link" className="p-0">
-                        Read More <ArrowRight className="ml-1 h-3 w-3" />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Button asChild variant="outline">
-              <Link href="/blog">View All Posts</Link>
             </Button>
           </div>
         </div>

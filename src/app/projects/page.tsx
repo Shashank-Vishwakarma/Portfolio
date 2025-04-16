@@ -82,7 +82,7 @@ const projects = [
 ]
 
 // Categories for filtering
-const categories = ["All", "Frontend", "Full-Stack", "Mobile", "Backend"]
+const categories = ["All", "Full-Stack", "Backend", "Mobile"]
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -154,11 +154,15 @@ export default function ProjectsPage() {
                       <Github className="mr-2 h-4 w-4" /> Code
                     </Link>
                   </Button>
-                  <Button size="sm" asChild>
-                    <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                      Live Demo <ArrowUpRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  {
+                    project.demoUrl && (
+                      <Button size="sm" asChild>
+                        <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                          Live Demo <ArrowUpRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    )
+                  }
                 </CardFooter>
               </Card>
             </motion.div>

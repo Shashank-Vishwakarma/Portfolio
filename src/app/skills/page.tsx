@@ -106,38 +106,6 @@ export default function SkillsPage() {
             </TabsContent>
           ))}
         </Tabs>
-
-        {/* Skill Visualization */}
-        <div className="mt-20">
-          <h2 className="text-2xl font-bold tracking-tighter mb-8 text-center">Skill Visualization</h2>
-          <div className="bg-card rounded-lg p-8 shadow-sm">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {skillCategories
-                .find((category) => category.id === activeTab)
-                ?.skills.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
-                    className="flex flex-col items-center justify-center text-center"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <div
-                      className="w-24 h-24 rounded-full flex items-center justify-center mb-3 text-lg font-bold"
-                      style={{
-                        background: `conic-gradient(var(--primary) ${skill.level}%, transparent 0)`,
-                      }}
-                    >
-                      <div className="w-20 h-20 rounded-full bg-background flex items-center justify-center">
-                        {skill.level}%
-                      </div>
-                    </div>
-                    <span className="text-sm font-medium">{skill.name}</span>
-                  </motion.div>
-                ))}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   )
