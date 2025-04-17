@@ -1,65 +1,55 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
+import Image from "next/image"
 
-// Skill categories and data
-const skillCategories = [
-  {
-    id: "frontend",
-    name: "Frontend",
-    skills: [
-      { name: "React.js", level: 95, description: "Building interactive UIs with React and its ecosystem" },
-      { name: "Next.js", level: 90, description: "Creating server-rendered React applications" },
-      { name: "TypeScript", level: 85, description: "Type-safe JavaScript development" },
-      { name: "Tailwind CSS", level: 90, description: "Utility-first CSS framework for rapid UI development" },
-      { name: "Framer Motion", level: 80, description: "Creating fluid animations and interactions" },
-      { name: "HTML/CSS", level: 95, description: "Semantic markup and modern CSS techniques" },
-    ],
-  },
-  {
-    id: "backend",
-    name: "Backend",
-    skills: [
-      { name: "Node.js", level: 90, description: "Server-side JavaScript runtime" },
-      { name: "Express.js", level: 85, description: "Web application framework for Node.js" },
-      { name: "MongoDB", level: 85, description: "NoSQL database for modern applications" },
-      { name: "PostgreSQL", level: 80, description: "Relational database management" },
-      { name: "GraphQL", level: 75, description: "API query language and runtime" },
-      { name: "GoLang", level: 70, description: "High-performance backend development" },
-    ],
-  },
-  {
-    id: "tools",
-    name: "Tools & DevOps",
-    skills: [
-      { name: "Git & GitHub", level: 90, description: "Version control and collaboration" },
-      { name: "Docker", level: 80, description: "Containerization for consistent environments" },
-      { name: "AWS", level: 75, description: "Cloud infrastructure and services" },
-      { name: "CI/CD", level: 85, description: "Automated testing and deployment pipelines" },
-      { name: "Jest", level: 80, description: "JavaScript testing framework" },
-      { name: "Webpack", level: 75, description: "Module bundler for JavaScript applications" },
-    ],
-  },
-  {
-    id: "other",
-    name: "Other Skills",
-    skills: [
-      { name: "UI/UX Design", level: 70, description: "Creating user-centered designs and experiences" },
-      { name: "Agile Methodologies", level: 85, description: "Scrum and Kanban project management" },
-      { name: "Technical Writing", level: 80, description: "Documentation and knowledge sharing" },
-      { name: "SEO", level: 75, description: "Search engine optimization techniques" },
-      { name: "Performance Optimization", level: 85, description: "Web performance and core web vitals" },
-      { name: "Accessibility", level: 80, description: "Building inclusive web applications" },
-    ],
-  },
-]
+interface Skill {
+  name: string
+  description: string
+  category: string
+  iconUrl: string
+}
 
 export default function SkillsPage() {
-  const [activeTab, setActiveTab] = useState("frontend")
+  const [activeTab, setActiveTab] = useState("Frontend")
+  const [skills, setSkills] = useState<Skill[]>([])
+  const [skillsByCategory, setSkillsByCategory] = useState<Skill[]>([])
+  const [allCategories, setAllCategories] = useState<string[]>([])
+
+  useEffect(() => {
+    setActiveTab('Frontend')
+
+    const fetchSkills = async () => {
+      try {
+        const response = await fetch("/api/skills")
+        const data = await response.json()
+
+        setSkills(data as Skill[])
+        setAllCategories(
+          Array.from(
+            new Set(
+              (data as Skill[]).map(
+                (skill) => skill.category.substring(0, 1).toUpperCase() + skill.category.substring(1)
+              )
+            )
+          )
+        )
+
+        setSkillsByCategory((data as Skill[]).filter((skill) => skill.category === activeTab))
+      } catch (error) {
+        console.error("Error fetching skills:", error)
+      }
+    }
+
+    fetchSkills()
+  }, [])
+
+  useEffect(()=>{
+    setSkillsByCategory(skills.filter((skill) => skill.category === activeTab))
+  }, [activeTab])
 
   return (
     <div className="min-h-screen py-16 md:py-24">
@@ -71,19 +61,19 @@ export default function SkillsPage() {
           </p>
         </div>
 
-        <Tabs defaultValue="frontend" value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <Tabs defaultValue="Frontend" value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-8">
-            {skillCategories.map((category) => (
-              <TabsTrigger key={category.id} value={category.id}>
-                {category.name}
+            {allCategories.map((category, index) => (
+              <TabsTrigger key={index} value={category}>
+                {category}
               </TabsTrigger>
             ))}
           </TabsList>
 
-          {skillCategories.map((category) => (
-            <TabsContent key={category.id} value={category.id} className="mt-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {category.skills.map((skill, index) => (
+          {allCategories.map((category, index) => (
+            <TabsContent key={index} value={category} className="mt-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {skillsByCategory.map((skill, index) => (
                   <motion.div
                     key={skill.name}
                     initial={{ opacity: 0, y: 20 }}
@@ -92,11 +82,17 @@ export default function SkillsPage() {
                   >
                     <Card>
                       <CardContent className="p-6">
-                        <div className="flex justify-between items-center mb-2">
+                        <div className="flex gap-4 items-center mb-2">
+                          {skill?.iconUrl && (
+                            <Image
+                              src={skill.iconUrl}
+                              width={40}
+                              height={40}
+                              alt="android"
+                            />
+                          )}
                           <h3 className="font-semibold">{skill.name}</h3>
-                          <span className="text-sm text-muted-foreground">{skill.level}%</span>
                         </div>
-                        <Progress value={skill.level} className="h-2 mb-3" />
                         <p className="text-sm text-muted-foreground">{skill.description}</p>
                       </CardContent>
                     </Card>
