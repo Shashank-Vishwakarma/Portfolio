@@ -9,26 +9,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "John Doe | Full-Stack Developer",
-  description:
-    "Personal portfolio of John Doe, a Full-Stack Developer specializing in React, Node.js, Next.js, TypeScript, MongoDB, and GoLang.",
-  keywords: "developer, portfolio, react, node.js, next.js, typescript, mongodb, golang",
-  authors: [{ name: "John Doe" }],
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://johndoe.dev",
-    title: "John Doe | Full-Stack Developer",
-    description: "Personal portfolio of John Doe, a Full-Stack Developer",
-    siteName: "John Doe Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "John Doe | Full-Stack Developer",
-    description: "Personal portfolio of John Doe, a Full-Stack Developer",
-    creator: "@johndoe",
-  },
-    generator: 'v0.dev'
+  title: "Shashank Vishwakarma | Full-Stack Developer",
 }
 
 export default function RootLayout({

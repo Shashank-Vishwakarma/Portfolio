@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react"
+import { ArrowRight, Github, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import HeroAnimation from "@/components/hero-animation"
 import AIChatButton from "@/components/ai-chat-button"
@@ -30,15 +30,15 @@ export default function HomePage() {
                 </Button>
               </div>
               <div className="flex gap-4 pt-4">
-                <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
-                  <Button variant="ghost" size="icon">
-                    <Github className="h-5 w-5" />
+                <Link href="https://github.com/Shashank-Vishwakarma" target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="icon" className="hover:cursor-pointer">
+                    <Github className="h-8 w-8" />
                     <span className="sr-only">GitHub</span>
                   </Button>
                 </Link>
-                <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:cursor-pointer">
-                  <Button variant="ghost" size="icon">
-                    <Linkedin className="h-5 w-5" />
+                <Link href="https://www.linkedin.com/in/shashank9225/" target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="icon" className="hover:cursor-pointer">
+                    <Linkedin className="h-8 w-8" />
                     <span className="sr-only">LinkedIn</span>
                   </Button>
                 </Link>
@@ -147,10 +147,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* AI Chat Assistant */}
+      {/* AI Chat Assistant
       <div className="fixed bottom-6 right-6 z-50">
         <AIChatButton />
-      </div>
+      </div> */}
     </div>
   )
 }
