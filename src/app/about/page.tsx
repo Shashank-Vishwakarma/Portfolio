@@ -5,28 +5,21 @@ import { Download } from "lucide-react"
 export default function AboutPage() {
   const timeline = [
     {
-      year: "2023 - Present",
-      title: "Senior Full-Stack Developer",
-      company: "Tech Innovations Inc.",
-      description: "Leading development of enterprise applications using Next.js, TypeScript, and MongoDB.",
+      year: "2024 - Present",
+      title: "Software Engineer",
+      company: "Decimal Point Analytics",
+      description: "Contributing to backend development projects using Python, FastAPI, Docker, LLMs, and more.",
     },
     {
-      year: "2020 - 2023",
-      title: "Full-Stack Developer",
-      company: "Digital Solutions Ltd.",
-      description: "Developed and maintained web applications using React, Node.js, and PostgreSQL.",
+      year: "2023",
+      title: "Backend Developer Intern",
+      company: "Datazip Technologies Private Limited",
+      description: "Contributing to backend development projects using GoLang, Python, Docker, LLMs, vector databases, and more.",
     },
     {
-      year: "2018 - 2020",
-      title: "Frontend Developer",
-      company: "Creative Web Agency",
-      description: "Created responsive and interactive user interfaces using React and CSS frameworks.",
-    },
-    {
-      year: "2016 - 2018",
-      title: "Computer Science Degree",
-      company: "University of Technology",
-      description: "Bachelor of Science in Computer Science with focus on software engineering.",
+      year: "2020 - 2024",
+      title: "B.Tech Undergrad",
+      company: "Indian Institute of Technology, Ropar",
     },
   ]
 
@@ -38,18 +31,17 @@ export default function AboutPage() {
             <div className="flex-1 order-2 md:order-1">
               <h1 className="text-4xl font-bold tracking-tighter mb-6">About Me</h1>
               <p className="text-xl text-muted-foreground mb-6">
-                I'm John Doe, a passionate Full-Stack Developer with over 7 years of experience building modern web
+                I'm Shashank Vishwakarma, B.Tech. student from prestigious Indian Institute of Technology, Ropar -  a passionate software Engineer with experience in building modern web and mobile
                 applications. I specialize in creating robust, scalable, and user-friendly solutions using cutting-edge
                 technologies.
               </p>
               <p className="text-muted-foreground mb-6">
-                My journey in software development began during my Computer Science studies, where I discovered my
-                passion for creating digital experiences. Since then, I've worked with various companies and clients,
-                helping them bring their ideas to life through code.
+                My journey in tech started with an internship at Datazip Technologies, where I honed my skills as a backend developer.
+                My tech skills spans across React, Nextjs, Nodejs, JavaScript/Typescript, Golang, Python, MongoDB, Postgres, Kafka, Redis, Message queues like BullMQ, Git and Github, Docker, Mobile App Development.
+                I'm passionate about continuous learning and love tackling new challenges - whether it's building engaging applications or exploring the latest technologies. I'm excited about the impactful projects ahead!
               </p>
               <p className="text-muted-foreground mb-6">
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                or sharing my knowledge through blog posts and tech talks.
+                When I'm not coding, you can find me exploring new technologies.
               </p>
               <Button className="mt-4">
                 <Download className="mr-2 h-4 w-4" /> Download Resume

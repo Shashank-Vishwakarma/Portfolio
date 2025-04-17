@@ -18,6 +18,7 @@ export default function HomePage() {
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
                 Full-Stack Developer specializing in Golang, Python, Javascript/Typescript, Node.js, React, Next.js, MongoDB, and more.
+                Building modern applications with a focus on performance and user experience.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg">
@@ -28,20 +29,6 @@ export default function HomePage() {
                 <Button variant="outline" size="lg" asChild>
                   <Link href="/projects">View Projects</Link>
                 </Button>
-              </div>
-              <div className="flex gap-4 pt-4">
-                <Link href="https://github.com/Shashank-Vishwakarma" target="_blank" rel="noopener noreferrer">
-                  <Button variant="ghost" size="icon" className="hover:cursor-pointer">
-                    <Github className="h-8 w-8" />
-                    <span className="sr-only">GitHub</span>
-                  </Button>
-                </Link>
-                <Link href="https://www.linkedin.com/in/shashank9225/" target="_blank" rel="noopener noreferrer">
-                  <Button variant="ghost" size="icon" className="hover:cursor-pointer">
-                    <Linkedin className="h-8 w-8" />
-                    <span className="sr-only">LinkedIn</span>
-                  </Button>
-                </Link>
               </div>
             </div>
             <div className="flex-1 relative">
