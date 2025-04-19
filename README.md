@@ -1,84 +1,37 @@
-# My Developer Portfolio
+# 🌟 Shashank Vishwakarma - Developer Portfolio
 
-## 🏠 Home
-- Welcome message with a brief introduction.
-- Highlights of expertise (e.g., Full-Stack Developer, MERN Stack, GoLang, Python).
-- Call-to-action buttons: 
-  - [View Projects](#projects)
-  - [Contact Me](#contact)
+Welcome to my developer portfolio! I'm a passionate software developer with expertise in full-stack development, backend systems, and AI-driven applications. 
+
+Here, you can explore the projects I've built and technologies I've mastered. 🚀
 
 ---
 
-## 👨‍💻 About Me
-- **Name**: [Your Name]  
-- **Role**: Software Development Engineer | Full-Stack Developer  
-- **Education**: Graduated from IIT Ropar  
-- **Experience**:  
-  - **Decimal Point Analytics**: Python Core Team  
-  - **Internship at DataZip Technologies**: Backend Development (GoLang, Python, Docker)  
+## 🚀 About Me
+
+- 🎓 **Education**: Graduate from Indian Institute of Technology, Ropar
+- 🖥️ **Current Role**: Software Engineer
+- 💻 **Tech Stack**:  
+  - Golang
+  - Docker
+  - Node.js
+  - Express.js
+  - Next.js
+  - Redis
+  - Kafka
+  - RabbitMQ
+  - Python
+  - FastAPI
+  - ... more
+
+- 💬 **Interests**: Building scalable systems, exploring AI applications, and creating impactful developer tools.
 
 ---
 
-## 🚀 Projects
-### 1. **LeetCode Clone**
-- A coding platform with features like code editor, blogs, and discussion forums.
-- **Tech Stack**: Next.js, GoLang, MongoDB  
-- [View Project](#)
+## 🌐 Let's Connect
 
-### 2. **Remote Code Execution System**
-- APIs for running and submitting coding challenges.
-- **Tech Stack**: GoLang, Docker  
-- [View Project](#)
-
-### 3. **Collaborative Coding Platform**
-- A real-time coding platform with IDE, AI tools, and deployment features.
-- **Tech Stack**: React, Next.js, GoLang  
-- [View Project](#)
+- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/shashank9225/)  
+- **Portfolio Website**: [Portfolio Link](https://portfolio-dusky-chi-64.vercel.app/)  
 
 ---
 
-## 🛠️ Skills
-### **Languages**
-- JavaScript/TypeScript, Python, GoLang, Java
-
-### **Frameworks & Libraries**
-- React.js, Next.js, Django, FastAPI, Node.js
-
-### **Databases**
-- MongoDB, PostgreSQL, Redis
-
-### **DevOps**
-- Docker, Kubernetes, Kafka, Message Queues
-
-### **Other Tools**
-- Git/GitHub, WebSockets, WebRTC, GraphQL
-
----
-
-## 📝 Blog
-- Share insights and tutorials related to:
-  - Full-Stack Development
-  - Backend Engineering
-  - AI & ML Innovations  
-[Read My Blog](#)
-
----
-
-## 📞 Contact
-- Email: [your.email@example.com](mailto:your.email@example.com)
-- LinkedIn: [Your LinkedIn Profile](#)
-- GitHub: [Your GitHub Profile](#)
-- Twitter: [Your Twitter Handle](#)
-
----
-
-## 🤖 AI Features
-- AI Chatbot to answer FAQs about my portfolio.
-- Intelligent project recommendations based on visitor interaction.
-- AI-powered search functionality.
-
----
-
-## 📍 Footer
-- © 2025 [Your Name]. All Rights Reserved.
-- Built with ❤️ using Next.js and Tailwind CSS.
+**✨ Building solutions. Writing code. Inspiring growth.**
