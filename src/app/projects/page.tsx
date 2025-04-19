@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight, Github } from "lucide-react"
@@ -9,86 +9,57 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from "framer-motion"
 
-// Sample project data
-const projects = [
-  {
-    id: 1,
-    title: "E-Commerce Platform",
-    description:
-      "A full-featured e-commerce platform with product management, cart functionality, and payment processing.",
-    image: "/placeholder.svg?height=400&width=600&text=E-Commerce+Platform",
-    tags: ["Next.js", "TypeScript", "MongoDB", "Stripe", "Tailwind CSS"],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com",
-    featured: true,
-    category: "Full-Stack",
-  },
-  {
-    id: 2,
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates and team collaboration features.",
-    image: "/placeholder.svg?height=400&width=600&text=Task+Management",
-    tags: ["React", "Node.js", "Socket.io", "PostgreSQL", "Docker"],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com",
-    featured: true,
-    category: "Full-Stack",
-  },
-  {
-    id: 3,
-    title: "Weather Dashboard",
-    description: "A weather dashboard that displays current and forecasted weather data from multiple sources.",
-    image: "/placeholder.svg?height=400&width=600&text=Weather+Dashboard",
-    tags: ["React", "Chart.js", "Weather API", "CSS Modules"],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com",
-    featured: false,
-    category: "Frontend",
-  },
-  {
-    id: 4,
-    title: "Content Management System",
-    description:
-      "A headless CMS with a user-friendly interface for managing digital content across multiple platforms.",
-    image: "/placeholder.svg?height=400&width=600&text=CMS",
-    tags: ["Next.js", "GraphQL", "MongoDB", "AWS S3"],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com",
-    featured: true,
-    category: "Full-Stack",
-  },
-  {
-    id: 5,
-    title: "Fitness Tracking App",
-    description: "A mobile-first application for tracking workouts, nutrition, and fitness progress.",
-    image: "/placeholder.svg?height=400&width=600&text=Fitness+App",
-    tags: ["React Native", "Firebase", "Redux", "Health API"],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com",
-    featured: false,
-    category: "Mobile",
-  },
-  {
-    id: 6,
-    title: "Real-time Chat Application",
-    description: "A real-time messaging platform with private and group chat capabilities.",
-    image: "/placeholder.svg?height=400&width=600&text=Chat+App",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com",
-    featured: false,
-    category: "Full-Stack",
-  },
-]
-
-// Categories for filtering
-const categories = ["All", "Full-Stack", "Backend", "Mobile"]
+interface Project {
+  id: string
+  title: string
+  description: string
+  image: string
+  tags: string[]
+  demoUrl: string
+  githubUrl: string
+  category: string
+  featured: boolean
+  sortNumber: number
+}
 
 export default function ProjectsPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All")
+  const [selectedCategory, setSelectedCategory] = useState("Full-Stack")
+  const [allCategories, setAllCategories] = useState<string[]>([])
+  const [allProjects, setAllProjects] = useState<Project[]>([])
+  const [projectsByCategory, setProjectsByCategory] = useState<Project[]>([])
 
-  const filteredProjects =
-    selectedCategory === "All" ? projects : projects.filter((project) => project.category === selectedCategory)
+  useEffect(() => {
+    setSelectedCategory("Full-Stack")
+
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch("/api/projects")
+        const data = await response.json()
+
+        setAllProjects(data as Project[])
+
+        setAllCategories(
+          Array.from(
+            new Set(
+              (data as Project[]).map(
+                (project) => project.category.substring(0, 1).toUpperCase() + project.category.substring(1)
+              )
+            )
+          )
+        )
+
+        setProjectsByCategory((data as Project[]).filter((project) => project.category === selectedCategory))
+      } catch(err) {
+        console.log("Error getting projects: ", err)
+      }
+    }
+
+    fetchProjects()
+  }, [])
+
+  useEffect(()=>{
+    setProjectsByCategory(allProjects.filter((project) => project.category === selectedCategory))
+  }, [selectedCategory])
 
   return (
     <div className="min-h-screen py-16 md:py-24">
@@ -103,12 +74,12 @@ export default function ProjectsPage() {
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((category) => (
+          {allCategories.map((category) => (
             <Button
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
               onClick={() => setSelectedCategory(category)}
-              className="mb-2"
+              className="mb-2 cursor-pointer"
             >
               {category}
             </Button>
@@ -117,7 +88,7 @@ export default function ProjectsPage() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {projectsByCategory.map((project) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -125,17 +96,16 @@ export default function ProjectsPage() {
               transition={{ duration: 0.3 }}
             >
               <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="aspect-video relative overflow-hidden">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    width={600}
-                    height={400}
-                    className="object-cover transition-transform hover:scale-105 duration-300"
-                  />
-                  {project.featured && <Badge className="absolute top-2 right-2">Featured</Badge>}
-                </div>
                 <CardHeader>
+                  <div className="aspect-video relative overflow-hidden">
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      width={600}
+                      height={500}
+                      className="object-cover transition-transform hover:scale-105 duration-300"
+                    />
+                  </div>
                   <CardTitle>{project.title}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>

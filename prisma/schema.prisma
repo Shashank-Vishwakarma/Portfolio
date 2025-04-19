@@ -17,6 +17,8 @@ model Project {
   demoUrl     String?
   githubUrl   String
   category    String
+  featured    Boolean
+  sortNumber  Int
 
   @@map("projects")
 }
