@@ -4,7 +4,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, ArrowUpRight, Download, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import HeroAnimation from "@/components/hero-animation"
 import { TypeAnimation } from "react-type-animation"
 import { useEffect, useState } from "react"
 import { Project } from "./projects/page"
@@ -171,13 +170,12 @@ export default function HomePage() {
               <div className="relative w-full aspect-square max-w-md mx-auto">
                 <Image
                   src="/placeholder.svg?height=400&width=400"
-                  alt="John Doe"
+                  alt="Shashank Vishwakarma"
                   width={400}
                   height={400}
                   className="rounded-full object-cover border-4 border-background shadow-xl"
                   priority
                 />
-                <HeroAnimation />
               </div>
             </div>
           </div>

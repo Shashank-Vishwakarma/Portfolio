@@ -2,47 +2,31 @@
 
 import type React from "react"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Phone, MapPin, Send, Check } from "lucide-react"
+import { Card, CardContent, CardTitle } from "@/components/ui/card"
+import Link from "next/link"
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
+  // const [formState, setFormState] = useState({
+  //   name: "",
+  //   email: "",
+  //   subject: "",
+  //   message: "",
+  // })
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  // const [isSubmitting, setIsSubmitting] = useState(false)
+  // const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormState((prev) => ({ ...prev, [name]: value }))
-  }
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  //   const { name, value } = e.target
+  //   setFormState((prev) => ({ ...prev, [name]: value }))
+  // }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormState({ name: "", email: "", subject: "", message: "" })
-
-    // Reset success message after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-    }, 5000)
-  }
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault()
+    
+  //   // TODO: send mail to me
+  // }
 
   return (
     <div className="min-h-screen py-16 md:py-24">
@@ -54,10 +38,10 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-            <Card>
+          {/* <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}> */}
+            {/* <Card>
               <CardContent className="p-6">
                 <h2 className="text-2xl font-semibold mb-6">Send a Message</h2>
 
@@ -134,10 +118,46 @@ export default function ContactPage() {
                   </form>
                 )}
               </CardContent>
-            </Card>
+            </Card> */}
+          {/* </motion.div> */}
+
+          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+          <div className="flex flex-col md:flex-row gap-12 items-center mb-12">
+            <div className="flex-1">
+              <Card>
+                <CardContent className="p-6">
+                  <h2 className="text-2xl font-semibold mb-6 p-2">Contact Information</h2>
+                  <CardTitle>
+                    <div className="flex gap-8 p-2 items-center">
+                      <span className="text-lg font-semibold">Email: </span>
+                      <span className="text-muted-foreground text-sm">shashank78680@gmail.com</span>
+                    </div>
+
+                    <div className="flex gap-8 p-2 items-center">
+                      <span className="text-lg font-semibold">GitHub: </span>
+                      <Link href="https://github.com/Shashank-Vishwakarma" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <span className="text-blue-400 text-sm underline">https://github.com/Shashank-Vishwakarma</span>
+                      </Link>
+                    </div>
+
+                    <div className="flex gap-8 p-2 items-center">
+                      <span className="text-lg font-semibold">LinkedIn: </span>
+                      <Link href="https://www.linkedin.com/in/shashank9225/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <span className="text-blue-400 text-sm underline">https://www.linkedin.com/in/shashank9225/</span>
+                      </Link>
+                    </div>
+
+                    <div className="flex gap-8 p-2 items-center">
+                      <span className="text-lg font-semibold">Address: </span>
+                      <span className="text-muted-foreground text-sm">Gorakhpur, Uttar Pradesh, India</span>
+                    </div>
+                  </CardTitle>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
           </motion.div>
 
-          {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -149,20 +169,20 @@ export default function ContactPage() {
               <div className="space-y-4">
                 {[
                   {
-                    question: "What services do you offer?",
+                    question: "What skills do you have?",
                     answer:
-                      "I specialize in full-stack web development, including frontend and backend development, database design, and API integration.",
+                      "I specialize in full-stack development using React.js, Next.js, Node.js, Golang, FastAPI, MongoDB, PostgreSQL, AWS and more.",
                   },
                   {
-                    question: "What is your typical project timeline?",
+                    question: "Why should someone hire you?",
                     answer:
-                      "Project timelines vary based on complexity, but I typically deliver small to medium-sized projects within 4-8 weeks.",
+                      "I build scalable applications, solve complex problems, and deliver impactful solutions using modern technologies.",
                   },
                   {
-                    question: "Do you offer maintenance services?",
+                    question: "What makes you stand out?",
                     answer:
-                      "Yes, I offer ongoing maintenance and support services to ensure your application remains up-to-date and secure.",
-                  },
+                      "My adaptability, experience in advanced projects, and focus on delivering business-specific solutions sets me apart.",
+                  }
                 ].map((faq, index) => (
                   <div key={index} className="bg-card p-4 rounded-lg border">
                     <h3 className="font-medium mb-2">{faq.question}</h3>

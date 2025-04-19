@@ -17,7 +17,7 @@ export default function AIChatButton() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hi there! I'm John's AI assistant. How can I help you today?",
+      content: "Hi there! I'm Shashank's AI assistant. How can I help you today?",
     },
   ])
   const [input, setInput] = useState("")
@@ -35,11 +35,11 @@ export default function AIChatButton() {
     // Simulate AI response
     setTimeout(() => {
       const responses = [
-        "I'd be happy to tell you more about John's experience with React and Next.js!",
-        "John has worked on several projects using MongoDB. Would you like to see some examples?",
-        "You can contact John directly through the contact form or via email at contact@johndoe.dev.",
-        "John specializes in building full-stack applications with React, Node.js, and TypeScript.",
-        "Check out the Projects section to see John's recent work with these technologies.",
+        "I'd be happy to tell you more about Shashank's experience with React and Next.js!",
+        " Shashank has worked on several projects using MongoDB. Would you like to see some examples?",
+        "You can contact  Shashank directly through the contact form or via email at contact@shashank.dev.",
+        " Shashank specializes in building full-stack applications with React, Node.js, and TypeScript.",
+        "Check out the Projects section to see  Shashank's recent work with these technologies.",
       ]
 
       const aiMessage: Message = {

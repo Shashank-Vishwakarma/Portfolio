@@ -59,9 +59,6 @@ export default function AboutPage() {
                 <br />
                 I'm passionate about continuous learning and love tackling new challenges - whether it's building engaging applications or exploring the latest technologies. I'm excited about the impactful projects ahead!
               </p>
-              <p className="text-muted-foreground mb-6">
-                When I'm not coding, you can find me exploring new technologies.
-              </p>
               <Button className="mt-4">
                 <Link target="_blank" className="flex" href="https://drive.google.com/file/d/1j-38lbYp1IZjzIQcMpDvVEVNnozfshPz/view?usp=sharing">
                   <Download className="mr-2 h-4 w-4" /> Resume
@@ -71,11 +68,11 @@ export default function AboutPage() {
             <div className="flex-1 order-1 md:order-2">
               <div className="relative w-full max-w-md mx-auto aspect-square">
                 <Image
-                  src="/placeholder.svg?height=500&width=500"
-                  alt="John Doe"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover shadow-xl"
+                  src="/placeholder.svg"
+                  alt=" Shashank Vishwakarma"
+                  width={400}
+                  height={400}
+                  className="rounded-2xl object-cover shadow-xl"
                 />
               </div>
             </div>
