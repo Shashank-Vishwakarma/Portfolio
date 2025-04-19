@@ -136,7 +136,7 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             <div className="flex-1 space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
-                Hi, I'm <span className="text-primary">Shashank Vishwakarma</span>
+                Hi, I&apos;m <span className="text-primary">Shashank Vishwakarma</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
                 <TypeAnimation

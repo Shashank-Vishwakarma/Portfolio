@@ -37,7 +37,7 @@ export default function AboutPage() {
               <p className="text-xl text-muted-foreground mb-6">
                 {/* I'm Shashank Vishwakarma, a B.Tech. undergraduate from prestigious Indian Institute of Technology, Ropar. I am a passionate software Engineer with experience in building modern web and mobile applications and creating robust, scalable, and user-friendly solutions using cutting-edge technologies. */}
                 <span>
-                  Hello I'm Shashank Vishwakarma, {" "}
+                  Hello I&apos;m Shashank Vishwakarma, {" "}
                 </span>
                 <TypeAnimation
                   sequence={[
@@ -57,7 +57,7 @@ export default function AboutPage() {
                 </span>
                 <br />
                 <br />
-                I'm passionate about continuous learning and love tackling new challenges - whether it's building engaging applications or exploring the latest technologies. I'm excited about the impactful projects ahead!
+                I&apos;m passionate about continuous learning and love tackling new challenges - whether it&apos;s building engaging applications or exploring the latest technologies. I&apos;m excited about the impactful projects ahead!
               </p>
               <Button className="mt-4">
                 <Link target="_blank" className="flex" href="https://drive.google.com/file/d/1j-38lbYp1IZjzIQcMpDvVEVNnozfshPz/view?usp=sharing">
