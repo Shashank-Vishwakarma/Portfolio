@@ -122,32 +122,32 @@ export default function ContactPage() {
           {/* </motion.div> */}
 
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-          <div className="flex flex-col md:flex-row gap-12 items-center mb-12">
+          <div className="flex flex-col md:flex-row items-center mb-12">
             <div className="flex-1">
               <Card>
-                <CardContent className="p-6">
-                  <h2 className="text-2xl font-semibold mb-6 p-2">Contact Information</h2>
+                <CardContent className="p-2">
+                  <h2 className="text-2xl font-semibold mb-6 p-2 text-center md:text-left">Contact Information</h2>
                   <CardTitle>
-                    <div className="flex gap-8 p-2 items-center">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-8 p-2 items-center">
                       <span className="text-lg font-semibold">Email: </span>
-                      <span className="text-muted-foreground text-sm">shashank78680@gmail.com</span>
+                      <span className="text-muted-foreground text-sm ">shashank78680@gmail.com</span>
                     </div>
 
-                    <div className="flex gap-8 p-2 items-center">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-8 p-2 items-center">
                       <span className="text-lg font-semibold">GitHub: </span>
                       <Link href="https://github.com/Shashank-Vishwakarma" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <span className="text-blue-400 text-sm underline">https://github.com/Shashank-Vishwakarma</span>
                       </Link>
                     </div>
 
-                    <div className="flex gap-8 p-2 items-center">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-8 p-2 items-center">
                       <span className="text-lg font-semibold">LinkedIn: </span>
                       <Link href="https://www.linkedin.com/in/shashank9225/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <span className="text-blue-400 text-sm underline">https://www.linkedin.com/in/shashank9225/</span>
                       </Link>
                     </div>
 
-                    <div className="flex gap-8 p-2 items-center">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-8 p-2 items-center">
                       <span className="text-lg font-semibold">Address: </span>
                       <span className="text-muted-foreground text-sm">Gorakhpur, Uttar Pradesh, India</span>
                     </div>

@@ -169,11 +169,11 @@ export default function HomePage() {
             <div className="flex-1 relative">
               <div className="relative w-full aspect-square max-w-md mx-auto">
                 <Image
-                  src="/placeholder.svg?height=400&width=400"
+                  src="/portfolio-profile-cropped-2.jpg"
                   alt="Shashank Vishwakarma"
                   width={400}
                   height={400}
-                  className="rounded-full object-cover border-4 border-background shadow-xl"
+                  className="rounded-3xl object-cover border-4 border-background shadow-xl"
                   priority
                 />
               </div>

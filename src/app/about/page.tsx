@@ -68,11 +68,11 @@ export default function AboutPage() {
             <div className="flex-1 order-1 md:order-2">
               <div className="relative w-full max-w-md mx-auto aspect-square">
                 <Image
-                  src="/placeholder.svg"
+                  src="/portfolio-profile-cropped-2.jpg"
                   alt=" Shashank Vishwakarma"
                   width={400}
                   height={400}
-                  className="rounded-2xl object-cover shadow-xl"
+                  className="rounded-3xl object-cover shadow-xl"
                 />
               </div>
             </div>
