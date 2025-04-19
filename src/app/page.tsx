@@ -152,7 +152,7 @@ export default function HomePage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" asChild>
-                  <Link target="_blank" className="flex" href="https://drive.google.com/file/d/1j-38lbYp1IZjzIQcMpDvVEVNnozfshPz/view?usp=sharing">
+                  <Link target="_blank" className="flex" href="https://drive.google.com/file/d/13tHPFMZDAvFmAFBHgwK_1SiNqIs6DWfR/view?usp=sharing">
                     <Download className="mr-2 h-4 w-4" /> Resume
                   </Link>
                 </Button>

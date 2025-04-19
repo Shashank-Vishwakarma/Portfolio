@@ -60,7 +60,7 @@ export default function AboutPage() {
                 I&apos;m passionate about continuous learning and love tackling new challenges - whether it&apos;s building engaging applications or exploring the latest technologies. I&apos;m excited about the impactful projects ahead!
               </p>
               <Button className="mt-4">
-                <Link target="_blank" className="flex" href="https://drive.google.com/file/d/1j-38lbYp1IZjzIQcMpDvVEVNnozfshPz/view?usp=sharing">
+                <Link target="_blank" className="flex" href="https://drive.google.com/file/d/13tHPFMZDAvFmAFBHgwK_1SiNqIs6DWfR/view?usp=sharing">
                   <Download className="mr-2 h-4 w-4" /> Resume
                 </Link>
               </Button>
