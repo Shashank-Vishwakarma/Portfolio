@@ -1,28 +1,32 @@
+"use client"
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Download } from "lucide-react"
+import { TypeAnimation } from 'react-type-animation';
+import Link from "next/link";
+
+const timeline = [
+  {
+    year: "2024 - Present",
+    title: "Software Engineer",
+    company: "Decimal Point Analytics",
+    description: "Contributing to backend development projects using Python, FastAPI, Docker, LLMs, and more.",
+  },
+  {
+    year: "2023",
+    title: "Backend Developer Intern",
+    company: "Datazip Technologies Private Limited",
+    description: "Contributing to backend development projects using GoLang, Python, Docker, LLMs, vector databases, and more.",
+  },
+  {
+    year: "2020 - 2024",
+    title: "Bachelor of Technology",
+    company: "Indian Institute of Technology, Ropar",
+  },
+]
 
 export default function AboutPage() {
-  const timeline = [
-    {
-      year: "2024 - Present",
-      title: "Software Engineer",
-      company: "Decimal Point Analytics",
-      description: "Contributing to backend development projects using Python, FastAPI, Docker, LLMs, and more.",
-    },
-    {
-      year: "2023",
-      title: "Backend Developer Intern",
-      company: "Datazip Technologies Private Limited",
-      description: "Contributing to backend development projects using GoLang, Python, Docker, LLMs, vector databases, and more.",
-    },
-    {
-      year: "2020 - 2024",
-      title: "B.Tech Undergrad",
-      company: "Indian Institute of Technology, Ropar",
-    },
-  ]
-
   return (
     <div className="min-h-screen">
       <section className="py-20 md:py-28">
@@ -31,20 +35,37 @@ export default function AboutPage() {
             <div className="flex-1 order-2 md:order-1">
               <h1 className="text-4xl font-bold tracking-tighter mb-6">About Me</h1>
               <p className="text-xl text-muted-foreground mb-6">
-                I'm Shashank Vishwakarma, B.Tech. student from prestigious Indian Institute of Technology, Ropar -  a passionate software Engineer with experience in building modern web and mobile
-                applications. I specialize in creating robust, scalable, and user-friendly solutions using cutting-edge
-                technologies.
+                {/* I'm Shashank Vishwakarma, a B.Tech. undergraduate from prestigious Indian Institute of Technology, Ropar. I am a passionate software Engineer with experience in building modern web and mobile applications and creating robust, scalable, and user-friendly solutions using cutting-edge technologies. */}
+                <span>
+                  Hello I'm Shashank Vishwakarma, {" "}
+                </span>
+                <TypeAnimation
+                  sequence={[
+                    " a B.Tech. undergraduate from IIT, Ropar.",
+                    1000,
+                    " a passionate software Engineer.",
+                ]}
+                wrapper="span"
+                cursor={true}
+                repeat={Infinity}
+                style={{ display: 'inline-block', color: "#37ecba" }}
+              />
               </p>
               <p className="text-muted-foreground mb-6">
-                My journey in tech started with an internship at Datazip Technologies, where I honed my skills as a backend developer.
-                My tech skills spans across React, Nextjs, Nodejs, JavaScript/Typescript, Golang, Python, MongoDB, Postgres, Kafka, Redis, Message queues like BullMQ, Git and Github, Docker, Mobile App Development.
+                <span>
+                  My tech skills span across React, Nextjs, Nodejs, JavaScript/Typescript, Golang, Python, MongoDB, Postgres, Kafka, Redis, Message queues like BullMQ, Git and Github, Docker, Mobile App Development.
+                </span>
+                <br />
+                <br />
                 I'm passionate about continuous learning and love tackling new challenges - whether it's building engaging applications or exploring the latest technologies. I'm excited about the impactful projects ahead!
               </p>
               <p className="text-muted-foreground mb-6">
                 When I'm not coding, you can find me exploring new technologies.
               </p>
               <Button className="mt-4">
-                <Download className="mr-2 h-4 w-4" /> Download Resume
+                <Link target="_blank" className="flex" href="https://drive.google.com/file/d/1j-38lbYp1IZjzIQcMpDvVEVNnozfshPz/view?usp=sharing">
+                  <Download className="mr-2 h-4 w-4" /> Resume
+                </Link>
               </Button>
             </div>
             <div className="flex-1 order-1 md:order-2">

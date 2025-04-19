@@ -42,7 +42,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="text-2xl font-bold tracking-tighter">
-              PORTFOLIO<span className="text-primary"></span>
+              SV<span className="text-primary"></span>
             </Link>
           </div>
 

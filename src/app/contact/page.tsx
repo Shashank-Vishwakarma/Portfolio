@@ -127,7 +127,7 @@ export default function ContactPage() {
                         </>
                       ) : (
                         <>
-                          Send Message <Send className="ml-2 h-4 w-4" />
+                          Send Message
                         </>
                       )}
                     </Button>
@@ -144,39 +144,6 @@ export default function ContactPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-8"
           >
-            <div>
-              <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="bg-primary/10 p-3 rounded-full mr-4">
-                    <Mail className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Email</h3>
-                    <p className="text-muted-foreground">contact@johndoe.dev</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-primary/10 p-3 rounded-full mr-4">
-                    <Phone className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-primary/10 p-3 rounded-full mr-4">
-                    <MapPin className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Location</h3>
-                    <p className="text-muted-foreground">San Francisco, CA</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div>
               <h2 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
               <div className="space-y-4">
@@ -205,13 +172,6 @@ export default function ContactPage() {
               </div>
             </div>
           </motion.div>
-        </div>
-
-        {/* Map or Additional Contact Section */}
-        <div className="mt-16">
-          <div className="bg-muted rounded-lg p-4 h-64 flex items-center justify-center">
-            <p className="text-muted-foreground">Interactive map would be displayed here</p>
-          </div>
         </div>
       </div>
     </div>

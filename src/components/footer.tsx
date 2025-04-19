@@ -16,9 +16,6 @@ export default function Footer() {
               <Mail className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
             </Link>
           </div>
-        <div className="mt-12 pt-6 border-t text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Shashank Vishwakarma. All rights reserved.</p>
-        </div>
       </div>
     </footer>
   )

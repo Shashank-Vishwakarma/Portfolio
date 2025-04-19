@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from "framer-motion"
 
-interface Project {
+export interface Project {
   id: string
   title: string
   description: string
